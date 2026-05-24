@@ -13,4 +13,4 @@ This project was developed as my final year undergraduate project in Electrical 
 * **Technology Node:** SKY130
   
 ## Overview
-[Adicione um ou dois parágrafos curtos explicando a arquitetura do DCO ou imagens do esquemático/layout]
+TODO
