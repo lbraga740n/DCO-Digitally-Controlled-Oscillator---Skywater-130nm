@@ -1,0 +1,150 @@
+timestamp 1745002663
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use sky130_fd_pr__nfet_01v8_3GJG22 XM6 1 0 1119 0 1 -770
+use sky130_fd_pr__nfet_01v8_3GJG22 XM5 1 0 1435 0 1 -770
+use sky130_fd_pr__pfet_01v8_KF6HW3 XM4 1 0 2451 0 1 -88
+use sky130_fd_pr__pfet_01v8_KF6HW3 XM2 1 0 1422 0 1 -90
+use sky130_fd_pr__pfet_01v8_KF6HW3 XM1 1 0 1106 0 1 -90
+use sky130_fd_pr__pfet_01v8_KF6HW3 sky130_fd_pr__pfet_01v8_KF6HW3_0 1 0 2135 0 1 -88
+use sky130_fd_pr__nfet_01v8_3GJG22 sky130_fd_pr__nfet_01v8_3GJG22_1 1 0 2447 0 1 -762
+use sky130_fd_pr__nfet_01v8_3GJG22 sky130_fd_pr__nfet_01v8_3GJG22_0 1 0 2131 0 1 -762
+port "Set" 1 838 -688 1038 -488 m1
+port "Rst" 2 850 -442 1050 -242 m1
+port "Q" 3 2714 -372 2914 -172 m1
+port "QB" 4 2722 -606 2922 -406 m1
+port "Gnd" 5 822 -1278 1022 -1078 m1
+port "Vdd" 0 906 328 1106 528 m1
+node "m1_2160_n872#" 0 66.8452 2160 -872 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 41080 836 0 0 0 0 0 0 0 0 0 0
+node "m1_1146_n882#" 0 63.672 1146 -882 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 41396 840 0 0 0 0 0 0 0 0 0 0
+node "Set" 4 437.501 838 -688 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 66784 1808 143532 3480 0 0 0 0 0 0 0 0
+node "Rst" 1 141.965 850 -442 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77400 1504 0 0 0 0 0 0 0 0 0 0
+node "Q" 5 551.396 2714 -372 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 215760 4816 132444 3256 0 0 0 0 0 0 0 0
+node "QB" 6 481.094 2722 -606 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 200536 4660 131312 3548 0 0 0 0 0 0 0 0
+node "Gnd" 131 3076.58 822 -1278 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1153720 7512 582564 6100 0 0 0 0 0 0 0 0 0 0
+node "Vdd" 150 3444.29 906 328 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1294092 8384 634116 8100 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "m1_2160_n872#" "Vdd" 0.424213
+cap "Gnd" "QB" 312.41
+cap "Vdd" "m1_1146_n882#" 0.418784
+cap "Set" "Gnd" 334.301
+cap "Q" "Vdd" 921.789
+cap "Gnd" "Rst" 27.6807
+cap "Set" "QB" 913.772
+cap "Q" "m1_2160_n872#" 89.3888
+cap "Rst" "QB" 100.873
+cap "Q" "m1_1146_n882#" 9.12243
+cap "Set" "Rst" 283.604
+cap "Gnd" "Vdd" 172.718
+cap "QB" "Vdd" 448.15
+cap "Gnd" "m1_2160_n872#" 152.433
+cap "Gnd" "m1_1146_n882#" 161.518
+cap "QB" "m1_2160_n872#" 10.9876
+cap "QB" "m1_1146_n882#" 91.4584
+cap "Set" "Vdd" 38.061
+cap "Rst" "Vdd" 141.589
+cap "Gnd" "Q" 167.766
+cap "Set" "m1_2160_n872#" 33.3399
+cap "QB" "Q" 1324.74
+cap "Set" "m1_1146_n882#" 28.7448
+cap "Rst" "m1_1146_n882#" 0.795181
+cap "Set" "Q" 251.268
+cap "Rst" "Q" 30.8323
+cap "XM5/S" "XM6/G" 2.99649
+cap "XM5/G" "XM6/G" 13.4463
+cap "XM4/G" "XM5/S" 13.0528
+cap "XM5/G" "XM4/G" 4.76248
+cap "XM6/G" "XM6/B" 20.4177
+cap "XM4/B" "XM6/G" 59.2123
+cap "XM4/G" "XM6/B" 37.3056
+cap "XM4/B" "XM4/G" 11.8536
+cap "XM5/G" "sky130_fd_pr__nfet_01v8_3GJG22_1/D" -65.761
+cap "XM5/S" "sky130_fd_pr__nfet_01v8_3GJG22_1/D" 0.753629
+cap "XM4/B" "sky130_fd_pr__nfet_01v8_3GJG22_1/D" 1.00326
+cap "XM6/B" "sky130_fd_pr__nfet_01v8_3GJG22_1/D" -10.2843
+cap "XM5/G" "XM6/S" -0.162399
+cap "XM6/S" "XM5/S" -62.1139
+cap "XM6/S" "XM6/B" -55.5765
+cap "XM4/G" "XM6/G" 6.21821
+cap "XM4/B" "XM6/S" 4.57147
+cap "XM4/G" "sky130_fd_pr__nfet_01v8_3GJG22_1/D" 1.01042
+cap "XM5/G" "XM5/S" 32.8318
+cap "XM5/G" "XM6/B" 24.0856
+cap "XM5/S" "XM6/B" 37.0748
+cap "XM4/B" "XM5/S" -92.2883
+cap "XM4/B" "XM5/G" -11.3062
+cap "XM6/S" "XM6/G" 0.189111
+cap "XM4/B" "XM6/B" 114.724
+cap "XM4/G" "XM6/S" 1.59901
+cap "XM4/B" "sky130_fd_pr__nfet_01v8_3GJG22_1/D" 4.93802
+cap "XM5/S" "XM6/B" 9.19893
+cap "XM4/G" "XM5/G" 9.37008
+cap "XM4/G" "XM4/B" 32.0754
+cap "XM4/G" "sky130_fd_pr__nfet_01v8_3GJG22_1/D" 0.795811
+cap "XM6/G" "XM6/B" 0.01056
+cap "XM6/B" "XM5/G" 0.0526641
+cap "XM4/B" "XM6/B" 56.2397
+cap "XM5/S" "XM5/G" 2.04085
+cap "XM5/S" "XM4/B" 15.9091
+cap "XM6/B" "sky130_fd_pr__nfet_01v8_3GJG22_1/D" -37.9352
+cap "XM4/G" "XM6/B" 40.617
+cap "XM5/S" "XM4/G" 7.17588
+cap "XM4/B" "XM5/G" 11.4186
+cap "XM5/S" "XM4/G" 0.727273
+cap "XM6/G" "XM4/B" 4.06709
+cap "XM5/S" "XM5/G" 0.967568
+cap "XM4/B" "XM6/B" -9.6576
+cap "XM6/G" "XM5/G" 1.45455
+cap "XM4/B" "sky130_fd_pr__nfet_01v8_3GJG22_1/D" -0.0815794
+cap "XM4/B" "XM4/G" -1.30271
+cap "XM6/G" "XM5/S" 0.202449
+cap "XM4/B" "XM5/G" -13.6757
+cap "XM6/S" "XM4/B" -0.418784
+cap "XM4/B" "XM5/S" -21.1417
+cap "XM4/G" "XM5/G" 0.202155
+cap "XM4/B" "XM5/G" -6.22553
+cap "XM6/B" "XM4/B" -4.18577
+cap "XM4/G" "XM4/B" 9.35076
+cap "sky130_fd_pr__nfet_01v8_3GJG22_1/D" "XM4/B" -0.342633
+cap "XM5/S" "XM4/G" 0.727273
+cap "XM5/S" "XM4/B" -0.865469
+merge "sky130_fd_pr__pfet_01v8_KF6HW3_0/D" "sky130_fd_pr__pfet_01v8_KF6HW3_0/B" -3364.72 0 0 0 0 -141616 -3096 0 0 -40528 -2520 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -131520 -9856 -41928 -2676 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_pr__pfet_01v8_KF6HW3_0/B" "XM1/D"
+merge "XM1/D" "XM1/B"
+merge "XM1/B" "XM2/S"
+merge "XM2/S" "XM2/B"
+merge "XM2/B" "XM4/S"
+merge "XM4/S" "XM4/B"
+merge "XM4/B" "Vdd"
+merge "sky130_fd_pr__nfet_01v8_3GJG22_0/B" "sky130_fd_pr__nfet_01v8_3GJG22_1/S" -1941.69 0 0 0 0 0 0 0 0 0 0 -29648 -1880 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -102256 -7960 -10200 -736 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_pr__nfet_01v8_3GJG22_1/S" "sky130_fd_pr__nfet_01v8_3GJG22_1/B"
+merge "sky130_fd_pr__nfet_01v8_3GJG22_1/B" "sky130_fd_pr__pfet_01v8_KF6HW3_0/VSUBS"
+merge "sky130_fd_pr__pfet_01v8_KF6HW3_0/VSUBS" "XM1/VSUBS"
+merge "XM1/VSUBS" "XM2/VSUBS"
+merge "XM2/VSUBS" "XM4/VSUBS"
+merge "XM4/VSUBS" "XM5/B"
+merge "XM5/B" "XM6/D"
+merge "XM6/D" "VSUBS"
+merge "VSUBS" "XM6/B"
+merge "XM6/B" "Gnd"
+merge "sky130_fd_pr__nfet_01v8_3GJG22_0/S" "sky130_fd_pr__nfet_01v8_3GJG22_1/D" -119.496 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -11700 -756 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_pr__nfet_01v8_3GJG22_1/D" "m1_2160_n872#"
+merge "sky130_fd_pr__nfet_01v8_3GJG22_0/D" "sky130_fd_pr__pfet_01v8_KF6HW3_0/S" -523.663 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -35669 -2144 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_pr__pfet_01v8_KF6HW3_0/S" "XM2/G"
+merge "XM2/G" "XM4/D"
+merge "XM4/D" "XM5/G"
+merge "XM5/G" "Q"
+merge "XM1/G" "XM6/G" -141.17 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -5132 -408 0 0 0 0 0 0 0 0 0 0
+merge "XM6/G" "Rst"
+merge "XM5/D" "XM6/S" -117.204 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12000 -760 0 0 0 0 0 0 0 0 0 0
+merge "XM6/S" "m1_1146_n882#"
+merge "sky130_fd_pr__nfet_01v8_3GJG22_1/G" "XM4/G" -167.594 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -4622 -390 0 0 0 0 0 0 0 0 0 0
+merge "XM4/G" "Set"
+merge "sky130_fd_pr__nfet_01v8_3GJG22_0/G" "sky130_fd_pr__pfet_01v8_KF6HW3_0/G" -440.316 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -33744 -2098 0 0 0 0 0 0 0 0 0 0
+merge "sky130_fd_pr__pfet_01v8_KF6HW3_0/G" "XM1/S"
+merge "XM1/S" "XM2/D"
+merge "XM2/D" "XM5/S"
+merge "XM5/S" "QB"

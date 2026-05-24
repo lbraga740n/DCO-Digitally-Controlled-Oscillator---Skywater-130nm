@@ -1,0 +1,44 @@
+** sch_path: /home/lbraga/Projects/relax_oscillator_v2/xschem/rc.sch
+.subckt rc Vdd Phi_1 Phi_2 rst Vplus Vminus Bit4 Bit0 Bit3 Bit2 Bit1 Bit5 gnd
+*.PININFO Vplus:O Vminus:O Vdd:B gnd:B Phi_1:I Phi_2:I Bit0:I Bit1:I Bit2:I Bit3:I rst:I Bit4:I Bit5:I
+XC1 Vplus net1 sky130_fd_pr__cap_mim_m3_2 W=3.11 L=15 m=1
+XC2 Vplus net2 sky130_fd_pr__cap_mim_m3_2 W=6.4 L=15 m=1
+XC3 Vplus net3 sky130_fd_pr__cap_mim_m3_2 W=13 L=15 m=1
+XC4 Vplus net4 sky130_fd_pr__cap_mim_m3_2 W=26.15 L=15 m=1
+XM9 net5 Phi_1 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM10 net6 Phi_1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=19.2 nf=1 m=1
+XM20 net12 Phi_2 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=19.2 nf=1 m=1
+XM21 net6 net13 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=19.2 nf=1 m=1
+XM22 net12 net13 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=19.2 nf=1 m=1
+XM25 net13 rst gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM26 net13 rst Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 m=1
+XC5 Vplus net14 sky130_fd_pr__cap_mim_m3_2 W=52.47 L=15 m=1
+XR1 Vplus net6 Vdd sky130_fd_pr__res_high_po_0p35 L=390 mult=1 m=1
+XR2 net5 Vplus gnd sky130_fd_pr__res_high_po_0p35 L=390 mult=1 m=1
+XR3 Vminus net12 Vdd sky130_fd_pr__res_high_po_0p35 L=390 mult=1 m=1
+XR4 net11 Vminus gnd sky130_fd_pr__res_high_po_0p35 L=390 mult=1 m=1
+XC6 Vplus net16 sky130_fd_pr__cap_mim_m3_2 W=105.15 L=15 m=1
+XC13 Vminus net7 sky130_fd_pr__cap_mim_m3_2 W=3.11 L=15 m=1
+XC14 Vminus net8 sky130_fd_pr__cap_mim_m3_2 W=6.4 L=15 m=1
+XC15 Vminus net9 sky130_fd_pr__cap_mim_m3_2 W=13 L=15 m=1
+XC16 Vminus net10 sky130_fd_pr__cap_mim_m3_2 W=26.15 L=15 m=1
+XC17 Vminus net15 sky130_fd_pr__cap_mim_m3_2 W=52.47 L=15 m=1
+XC18 Vminus net17 sky130_fd_pr__cap_mim_m3_2 W=105.15 L=15 m=1
+XM1 net1 Bit0 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM2 net2 Bit1 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM3 net3 Bit2 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM4 net4 Bit3 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM5 net14 Bit4 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM6 net16 Bit5 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM15 Vplus rst gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM7 net7 Bit0 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM8 net8 Bit1 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM11 net9 Bit2 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM12 net10 Bit3 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM13 net15 Bit4 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM14 net17 Bit5 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM16 net11 Phi_2 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+XM17 Vminus rst gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=10.5 nf=1 m=1
+.ends
+.end
+

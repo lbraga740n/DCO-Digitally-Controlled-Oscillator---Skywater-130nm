@@ -1,0 +1,5 @@
+
+Cells have no pins;  pin matching not needed.
+Device classes pulse_generator.spice and pulse_generator_MAG.spice are equivalent.
+
+Final result: Verify:  cell pulse_generator_MAG.spice has no elements and/or nodes.  Not checked.

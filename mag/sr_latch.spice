@@ -1,0 +1,21 @@
+* NGSPICE file created from sr_latch.ext - technology: sky130A
+
+.subckt sky130_fd_pr__pfet_01v8_KF6HW3 B D S G
+X0 S G D B sky130_fd_pr__pfet_01v8 ad=0.435 pd=3.58 as=0.435 ps=3.58 w=1.5 l=0.15
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_3GJG22 B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=0.2175 pd=2.08 as=0.2175 ps=2.08 w=0.75 l=0.15
+.ends
+
+.subckt sr_latch Vdd Set Rst Q QB Gnd
+XXM1 Vdd Vdd QB Rst sky130_fd_pr__pfet_01v8_KF6HW3
+XXM2 Vdd QB Vdd Q sky130_fd_pr__pfet_01v8_KF6HW3
+XXM4 Vdd Q Vdd Set sky130_fd_pr__pfet_01v8_KF6HW3
+XXM5 Gnd XM6/S QB Q sky130_fd_pr__nfet_01v8_3GJG22
+XXM6 Gnd Gnd XM6/S Rst sky130_fd_pr__nfet_01v8_3GJG22
+Xsky130_fd_pr__nfet_01v8_3GJG22_0 Gnd Q sky130_fd_pr__nfet_01v8_3GJG22_1/D QB sky130_fd_pr__nfet_01v8_3GJG22
+Xsky130_fd_pr__nfet_01v8_3GJG22_1 Gnd sky130_fd_pr__nfet_01v8_3GJG22_1/D Gnd Set sky130_fd_pr__nfet_01v8_3GJG22
+Xsky130_fd_pr__pfet_01v8_KF6HW3_0 Vdd Vdd Q QB sky130_fd_pr__pfet_01v8_KF6HW3
+.ends
+

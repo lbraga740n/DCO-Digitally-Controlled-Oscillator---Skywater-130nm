@@ -1,0 +1,35 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1744066976
+<< locali >>
+rect -14634 -30902 -14514 -26662
+rect -14252 -30902 -14132 -26662
+rect -13866 -30902 -13746 -26662
+rect -13482 -30902 -13362 -26662
+<< metal1 >>
+rect -14432 -27232 -13960 -26788
+rect -13656 -27230 -13184 -26786
+rect -14814 -30778 -14342 -30334
+rect -14042 -30776 -13570 -30332
+use sky130_fd_pr__res_xhigh_po_0p35_XJMT56  sky130_fd_pr__res_xhigh_po_0p35_XJMT56_1
+timestamp 1744066976
+transform 1 0 -14768 0 1 -28782
+box -201 -2156 201 2156
+use sky130_fd_pr__res_xhigh_po_0p35_XJMT56  sky130_fd_pr__res_xhigh_po_0p35_XJMT56_2
+timestamp 1744066976
+transform 1 0 -14383 0 1 -28782
+box -201 -2156 201 2156
+use sky130_fd_pr__res_xhigh_po_0p35_XJMT56  sky130_fd_pr__res_xhigh_po_0p35_XJMT56_3
+timestamp 1744066976
+transform 1 0 -13999 0 1 -28782
+box -201 -2156 201 2156
+use sky130_fd_pr__res_xhigh_po_0p35_XJMT56  sky130_fd_pr__res_xhigh_po_0p35_XJMT56_4
+timestamp 1744066976
+transform 1 0 -13613 0 1 -28782
+box -201 -2156 201 2156
+use sky130_fd_pr__res_xhigh_po_0p35_XJMT56  sky130_fd_pr__res_xhigh_po_0p35_XJMT56_5
+timestamp 1744066976
+transform 1 0 -13229 0 1 -28782
+box -201 -2156 201 2156
+<< end >>

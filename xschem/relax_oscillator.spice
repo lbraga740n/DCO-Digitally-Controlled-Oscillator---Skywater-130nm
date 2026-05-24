@@ -1,0 +1,127 @@
+** sch_path: /home/lbraga/Projects/relax_oscillator/xschem/relax_oscillator_tb.sch
+.subckt relax_oscillator_tb Vdd out rst_rc Bit7 Bit6 Bit5 Bit4 Bit3 Bit2 Bit1 Bit0 gnd
+*.PININFO Vdd:B gnd:B Bit7:I Bit6:I Bit5:I Bit4:I Bit3:I Bit2:I Bit1:I Bit0:I out:O rst_rc:B
+x1 Vdd out outn vminus vplus gnd comparator
+x2 Vdd set out gnd pulse_generator
+x3 Vdd rst outn gnd pulse_generator
+x4 Vdd set rst q qb gnd sr_latch
+x5 Vdd q qb rst_rc vplus vminus Bit7 Bit5 Bit0 Bit4 Bit3 Bit6 Bit2 Bit1 gnd rc
+.ends
+
+* expanding   symbol:  comparator.sym # of pins=6
+** sym_path: /home/lbraga/Projects/relax_oscillator/xschem/comparator.sym
+** sch_path: /home/lbraga/Projects/relax_oscillator/xschem/comparator.sch
+.subckt comparator Vdd Out OutN Vminus Vplus gnd
+*.PININFO Vminus:I Vplus:I Vdd:B gnd:B OutN:O Out:O
+XM1 net2 net2 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.75 W=7.5 nf=1 m=1
+XM2 net3 net2 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.75 W=7.5 nf=1 m=1
+XM5 OutN net3 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1.5 nf=1 m=1
+XM6 OutN net3 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=.75 nf=1 m=1
+XM7 Out OutN Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=3 nf=1 m=1
+XM8 Out OutN gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=1.5 nf=1 m=1
+XM3 net2 Vplus net1 gnd sky130_fd_pr__nfet_01v8 L=0.75 W=3.75 nf=1 m=1
+XM4 net3 Vminus net1 gnd sky130_fd_pr__nfet_01v8 L=0.75 W=3.75 nf=1 m=1
+XR1 Vplus Out gnd sky130_fd_pr__res_high_po W=0.15 L=120 mult=1 m=1
+XM9 net1 net4 gnd gnd sky130_fd_pr__nfet_01v8 L=0.75 W=7 nf=1 m=1
+XM10 net4 net4 gnd gnd sky130_fd_pr__nfet_01v8 L=0.75 W=0.7 nf=1 m=1
+XM11 net5 net4 net6 gnd sky130_fd_pr__nfet_01v8 L=0.75 W=1.4 nf=1 m=1
+XM12 net4 net5 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.75 W=7.5 nf=1 m=1
+XM13 net5 net5 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.75 W=7.5 nf=1 m=1
+XR2 gnd net6 gnd sky130_fd_pr__res_high_po W=0.15 L=46 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  pulse_generator.sym # of pins=4
+** sym_path: /home/lbraga/Projects/relax_oscillator/xschem/pulse_generator.sym
+** sch_path: /home/lbraga/Projects/relax_oscillator/xschem/pulse_generator.sch
+.subckt pulse_generator Vdd out in gnd
+*.PININFO Vdd:B in:I out:O gnd:B
+XM1 net1 in gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM3 net2 net1 gnd gnd sky130_fd_pr__nfet_01v8 L=0.75 W=1 nf=1 m=1
+XM5 net3 net2 gnd gnd sky130_fd_pr__nfet_01v8 L=0.75 W=1 nf=1 m=1
+XM7 net4 net3 gnd gnd sky130_fd_pr__nfet_01v8 L=0.75 W=1 nf=1 m=1
+XM9 net5 net4 gnd gnd sky130_fd_pr__nfet_01v8 L=0.75 W=1 nf=1 m=1
+XM13 out net5 net6 gnd sky130_fd_pr__nfet_01v8 L=0.75 W=1 nf=1 m=1
+XM14 net6 in gnd gnd sky130_fd_pr__nfet_01v8 L=0.75 W=1 nf=1 m=1
+XM2 net1 in Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 m=1
+XM4 net2 net1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.75 W=2 nf=1 m=1
+XM6 net3 net2 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.75 W=2 nf=1 m=1
+XM8 net4 net3 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.75 W=2 nf=1 m=1
+XM10 net5 net4 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.75 W=2 nf=1 m=1
+XM11 out net5 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.75 W=2 nf=1 m=1
+XM12 out in Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.75 W=2 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  sr_latch.sym # of pins=6
+** sym_path: /home/lbraga/Projects/relax_oscillator/xschem/sr_latch.sym
+** sch_path: /home/lbraga/Projects/relax_oscillator/xschem/sr_latch.sch
+.subckt sr_latch Vdd Set Rst Q QB Gnd
+*.PININFO Set:I Rst:I Gnd:B Vdd:B Q:O QB:O
+XM1 QB Rst Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1.5 nf=1 m=1
+XM5 QB Q net2 Gnd sky130_fd_pr__nfet_01v8 L=0.15 W=0.75 nf=1 m=1
+XM6 net2 Rst Gnd Gnd sky130_fd_pr__nfet_01v8 L=0.15 W=0.75 nf=1 m=1
+XM7 Q QB net1 Gnd sky130_fd_pr__nfet_01v8 L=0.15 W=0.75 nf=1 m=1
+XM8 net1 Set Gnd Gnd sky130_fd_pr__nfet_01v8 L=0.15 W=0.75 nf=1 m=1
+XM2 QB Q Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1.5 nf=1 m=1
+XM3 Q Set Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1.5 nf=1 m=1
+XM4 Q QB Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1.5 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  rc.sym # of pins=15
+** sym_path: /home/lbraga/Projects/relax_oscillator/xschem/rc.sym
+** sch_path: /home/lbraga/Projects/relax_oscillator/xschem/rc.sch
+.subckt rc Vdd Phi_1 Phi_2 rst Vplus Vminus Bit7 Bit5 Bit0 Bit4 Bit3 Bit6 Bit2 Bit1 gnd
+*.PININFO Vplus:O Vminus:O Vdd:B gnd:B Phi_1:I Phi_2:I Bit0:I Bit1:I Bit2:I Bit3:I Bit4:I Bit5:I Bit6:I Bit7:I rst:I
+XR1 Vplus net10 gnd sky130_fd_pr__res_high_po W=.15 L=214 mult=1 m=1
+XR2 net9 Vplus gnd sky130_fd_pr__res_high_po W=.15 L=214 mult=1 m=1
+XC1 Vplus net1 sky130_fd_pr__cap_mim_m3_2 W=1.24 L=1.24 m=1
+XC2 Vplus net2 sky130_fd_pr__cap_mim_m3_2 W=1.82 L=1.82 m=1
+XC3 Vplus net3 sky130_fd_pr__cap_mim_m3_2 W=2.65 L=2.64 m=1
+XC4 Vplus net4 sky130_fd_pr__cap_mim_m3_2 W=3.82 L=3.81 m=1
+XC5 Vplus net5 sky130_fd_pr__cap_mim_m3_2 W=5.47 L=5.47 m=1
+XC6 Vplus net6 sky130_fd_pr__cap_mim_m3_2 W=7.81 L=7.82 m=1
+XC7 Vplus net7 sky130_fd_pr__cap_mim_m3_2 W=11.13 L=11.12 m=1
+XC8 Vplus net8 sky130_fd_pr__cap_mim_m3_2 W=15.81 L=15.81 m=1
+XM1 net1 Bit0 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM2 net2 Bit1 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM3 net3 Bit2 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM4 net4 Bit3 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM5 net5 Bit4 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM6 net6 Bit5 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM7 net7 Bit6 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM8 net8 Bit7 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM9 net9 Phi_1 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM10 net10 Phi_1 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=15 nf=1 m=1
+XR3 Vminus net20 gnd sky130_fd_pr__res_high_po W=.15 L=214 mult=1 m=1
+XR4 net19 Vminus gnd sky130_fd_pr__res_high_po W=.15 L=214 mult=1 m=1
+XC9 Vminus net11 sky130_fd_pr__cap_mim_m3_2 W=1.24 L=1.24 m=1
+XC10 Vminus net12 sky130_fd_pr__cap_mim_m3_2 W=1.82 L=1.82 m=1
+XC11 Vminus net13 sky130_fd_pr__cap_mim_m3_2 W=2.65 L=2.64 m=1
+XC12 Vminus net14 sky130_fd_pr__cap_mim_m3_2 W=3.82 L=3.81 m=1
+XC13 Vminus net15 sky130_fd_pr__cap_mim_m3_2 W=5.47 L=5.47 m=1
+XC14 Vminus net16 sky130_fd_pr__cap_mim_m3_2 W=7.81 L=7.82 m=1
+XC15 Vminus net17 sky130_fd_pr__cap_mim_m3_2 W=11.13 L=11.12 m=1
+XC16 Vminus net18 sky130_fd_pr__cap_mim_m3_2 W=15.81 L=15.81 m=1
+XM11 net11 Bit0 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM12 net12 Bit1 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM13 net13 Bit2 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM14 net14 Bit3 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM15 net15 Bit4 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM16 net16 Bit5 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM17 net17 Bit6 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM18 net18 Bit7 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM19 net19 Phi_2 gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM20 net20 Phi_2 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=15 nf=1 m=1
+XM21 net10 net21 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=15 nf=1 m=1
+XM22 net20 net21 Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=15 nf=1 m=1
+XM23 Vplus rst gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM24 Vminus rst gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=8.1 nf=1 m=1
+XM25 net21 rst gnd gnd sky130_fd_pr__nfet_01v8 L=0.15 W=0.5 nf=1 m=1
+XM26 net21 rst Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+.ends
+
+.end
+
+

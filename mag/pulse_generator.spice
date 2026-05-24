@@ -1,0 +1,39 @@
+* NGSPICE file created from pulse_generator.ext - technology: sky130A
+
+.subckt sky130_fd_pr__nfet_01v8_3M8PRF B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.75
+.ends
+
+.subckt sky130_fd_pr__pfet_01v8_6ME4C9 B D S G
+X0 S G D B sky130_fd_pr__pfet_01v8 ad=0.58 pd=4.58 as=0.58 ps=4.58 w=2 l=0.75
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_2RKAFH B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.15
+.ends
+
+.subckt sky130_fd_pr__pfet_01v8_3KTXK9 B D S G
+X0 S G D B sky130_fd_pr__pfet_01v8 ad=0.58 pd=4.58 as=0.58 ps=4.58 w=2 l=0.15
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_E9XCMH B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.75
+.ends
+
+.subckt pulse_generator Vdd out in gnd
+XXM13 gnd out XM13/S XM9/S sky130_fd_pr__nfet_01v8_3M8PRF
+Xsky130_fd_pr__pfet_01v8_6ME4C9_0 Vdd out Vdd in sky130_fd_pr__pfet_01v8_6ME4C9
+Xsky130_fd_pr__nfet_01v8_3M8PRF_0 gnd XM13/S gnd in sky130_fd_pr__nfet_01v8_3M8PRF
+XXM1 gnd gnd XM4/G in sky130_fd_pr__nfet_01v8_2RKAFH
+XXM2 Vdd Vdd XM4/G in sky130_fd_pr__pfet_01v8_3KTXK9
+XXM3 gnd gnd XM6/G XM4/G sky130_fd_pr__nfet_01v8_E9XCMH
+XXM4 Vdd Vdd XM6/G XM4/G sky130_fd_pr__pfet_01v8_6ME4C9
+XXM5 gnd gnd XM8/G XM6/G sky130_fd_pr__nfet_01v8_3M8PRF
+XXM6 Vdd Vdd XM8/G XM6/G sky130_fd_pr__pfet_01v8_6ME4C9
+XXM7 gnd gnd XM9/G XM8/G sky130_fd_pr__nfet_01v8_3M8PRF
+XXM9 gnd gnd XM9/S XM9/G sky130_fd_pr__nfet_01v8_3M8PRF
+XXM8 Vdd Vdd XM9/G XM8/G sky130_fd_pr__pfet_01v8_6ME4C9
+XXM10 Vdd Vdd XM9/S XM9/G sky130_fd_pr__pfet_01v8_6ME4C9
+XXM11 Vdd Vdd out XM9/S sky130_fd_pr__pfet_01v8_6ME4C9
+.ends
+

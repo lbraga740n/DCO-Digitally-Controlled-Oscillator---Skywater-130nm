@@ -1,0 +1,66 @@
+* NGSPICE file created from comparator.ext - technology: sky130A
+
+.subckt sky130_fd_pr__pfet_01v8_TXPUN4 B D S G
+X0 S G D B sky130_fd_pr__pfet_01v8 ad=2.175 pd=15.58 as=2.175 ps=15.58 w=7.5 l=0.75
+.ends
+
+.subckt sky130_fd_pr__res_xhigh_po_0p35_EVX2CU B R1 R2
+X0 R1 R2 B sky130_fd_pr__res_xhigh_po_0p35 l=17.3
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_MCTHSQ B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=1.0875 pd=8.08 as=1.0875 ps=8.08 w=3.75 l=0.75
+.ends
+
+.subckt sky130_fd_pr__pfet_01v8_KF6HW3 B D S G
+X0 S G D B sky130_fd_pr__pfet_01v8 ad=0.435 pd=3.58 as=0.435 ps=3.58 w=1.5 l=0.15
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_3GJG22 B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=0.2175 pd=2.08 as=0.2175 ps=2.08 w=0.75 l=0.15
+.ends
+
+.subckt sky130_fd_pr__pfet_01v8_3K78K9 B D S G
+X0 S G D B sky130_fd_pr__pfet_01v8 ad=0.87 pd=6.58 as=0.87 ps=6.58 w=3 l=0.15
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_9PL6X7 B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=2.03 pd=14.58 as=2.03 ps=14.58 w=7 l=0.75
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_HDMJBH B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=0.435 pd=3.58 as=0.435 ps=3.58 w=1.5 l=0.15
+.ends
+
+.subckt sky130_fd_pr__res_xhigh_po_0p35_T68YWU B R1_0 R2_0 R1_1 R2_1
+X0 R1_1 R2_1 B sky130_fd_pr__res_xhigh_po_0p35 l=28.81
+X1 R1_0 R2_0 B sky130_fd_pr__res_xhigh_po_0p35 l=28.81
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_N9CY5J B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=0.203 pd=1.98 as=0.203 ps=1.98 w=0.7 l=0.75
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_4D98W7 B D S G
+X0 S G D B sky130_fd_pr__nfet_01v8 ad=0.406 pd=3.38 as=0.406 ps=3.38 w=1.4 l=0.75
+.ends
+
+.subckt comparator Vdd Out OutN Vminus Vplus gnd
+XXM12 Vdd Vdd XM9/G XM13/G sky130_fd_pr__pfet_01v8_TXPUN4
+XXM13 Vdd XM13/G Vdd XM13/G sky130_fd_pr__pfet_01v8_TXPUN4
+Xsky130_fd_pr__res_xhigh_po_0p35_EVX2CU_1 gnd XM11/S gnd sky130_fd_pr__res_xhigh_po_0p35_EVX2CU
+XXM1 Vdd XM3/D Vdd XM3/D sky130_fd_pr__pfet_01v8_TXPUN4
+XXM2 Vdd Vdd XM6/G XM3/D sky130_fd_pr__pfet_01v8_TXPUN4
+XXM3 gnd XM3/D XM9/D Vplus sky130_fd_pr__nfet_01v8_MCTHSQ
+XXM4 gnd XM9/D XM6/G Vminus sky130_fd_pr__nfet_01v8_MCTHSQ
+XXM5 Vdd Vdd OutN XM6/G sky130_fd_pr__pfet_01v8_KF6HW3
+XXM6 gnd gnd OutN XM6/G sky130_fd_pr__nfet_01v8_3GJG22
+XXM7 Vdd Vdd Out OutN sky130_fd_pr__pfet_01v8_3K78K9
+XXM9 gnd XM9/D gnd XM9/G sky130_fd_pr__nfet_01v8_9PL6X7
+XXM8 gnd gnd Out OutN sky130_fd_pr__nfet_01v8_HDMJBH
+Xsky130_fd_pr__res_xhigh_po_0p35_T68YWU_0 gnd sky130_fd_pr__res_xhigh_po_0p35_T68YWU_0/R1_1
++ Vplus sky130_fd_pr__res_xhigh_po_0p35_T68YWU_0/R1_1 Out sky130_fd_pr__res_xhigh_po_0p35_T68YWU
+XXM10 gnd gnd XM9/G XM9/G sky130_fd_pr__nfet_01v8_N9CY5J
+XXM11 gnd XM13/G XM11/S XM9/G sky130_fd_pr__nfet_01v8_4D98W7
+.ends
+
